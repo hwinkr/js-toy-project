@@ -1,0 +1,137 @@
+:root{
+    //Color
+    --white-color: #fff;
+    --black-color: #140a00;
+    --darkgrey-color:#909090;
+    --lightgrey-color:#e0e0e0;
+    //Size
+    --font-huge : 40px;
+    --font-medium : 20px;
+    --font-small : 12px;
+    --font-micro : 10px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.todoWeb{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 15%;
+    a{  
+        text-decoration: none;
+        color: var(--white-color);
+        font-size: var(--font-micro);
+        font-weight: bold;
+    }
+    .clock{
+        font-size : var(--font-huge);
+        font-weight: bold;
+        color: var(--white-color);
+    }
+    .weather{
+        font-size: var(--font-micro);
+        color:var(--white-color);
+        font-weight: bold;
+    }
+    .login-form.hidden{
+        display: none;
+    }
+    .login-form{
+        input{
+            font-size: var(--font-micro);
+            color: var(--white-color);
+            outline : none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: var(--white-color);
+            background-color: transparent;
+        }
+        input::placeholder{
+            color: var(--white-color);
+            font-size: var(--font-micro);
+        }
+    }
+    .userName.hidden{
+        display: none;
+    }
+    .userName{
+        margin-top: 5px;
+        font-size : var(--font-micro);
+        color : var(--white-color);
+        font-weight: bold;
+    }
+    .todo-form{
+        input{
+            font-size: var(--font-micro);
+            color: var(--white-color);
+            outline : none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: var(--white-color);
+            background-color: transparent;
+        }
+        input::placeholder{
+            color: var(--white-color);
+            font-size: var(--font-micro);
+        }
+        .delToDo{
+            display: none;
+        }
+        li{
+            margin-top: 5px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            color: var(--white-color);
+            font-size: var(--font-micro);
+            button{
+                background-color: transparent;
+                size: var(--font-micro);
+                border: none;
+            }
+            input[type="checkbox"]{
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                border: 1px solid var(--white-color);
+                appearance: none;
+                cursor: pointer;
+            }
+            input[type="checkbox"]:checked{
+                background: var(--white-color);
+                content: '✔';
+                border: none;
+            }
+        }
+    }
+    .quotes{
+        padding: 0;
+        margin-top: 10px;
+        font-weight: bold;
+        color: var(--white-color);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .quote{
+            font-size: var(--font-micro);
+        }
+        .author{
+            font-size: var(--font-micro)
+        }
+    }
+}
+

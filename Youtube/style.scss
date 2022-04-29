@@ -1,0 +1,133 @@
+*{
+    padding : 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+header{
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    color:white;
+    padding: 8px;
+    .logo{
+        i{
+            color: red;
+        }
+    }
+    .icons{
+        i{
+            padding-right: 5px;
+        }
+    }
+}
+.player{
+    position: relative;
+    top: 0;
+    text-align: center;
+    video{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.info{
+    .metadata{
+        .hashtag{
+            padding: 8px;
+            display: flex;
+            list-style:none;
+            font-size:10px;
+            color:blue;
+            li{
+                margin-right:5px;
+            }
+        }
+    }
+    .titleAndButton{
+        padding-left:8px;
+        .title{
+            font-size : 12px;
+            font-weight: bold;
+            width: 300px;
+        }
+    }
+    .moreBtn{
+        height: 100%;
+    }
+    .views{
+        padding-left: 8px;
+        font-size: 10px;
+        color: darkgray;
+    }
+    .action{
+        margin-top: 10px;
+        padding-left: 8px;
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        button{
+            i{
+                margin-bottom: 3px;
+                margin: 0 auto;
+            }
+            display: flex;
+            flex-direction: column;
+        }
+        button:hover{
+            background-color: red;
+            color:white
+        }
+        .touch{
+            background-color: white;
+            color:black;
+            border: none;
+        }
+        .touch.clicked{
+            background-color: blue;
+            color: white;
+        } 
+    }
+    .channel{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .metadata{
+            margin-top: 10px;
+            padding-left: 8px;
+            display: flex;
+        }
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .info{
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .name{
+                font-size: 12px;
+                font-weight: bold;
+                color: black;
+            }
+            .subscribers{
+                font-size: 10px;
+                color:darkgray;
+            }
+        }
+        button{
+            padding-right: 10px;
+            background-color: white;
+            border: none;
+            font-weight: bold;
+            color:red
+        }
+        button:hover{
+            background-color: rgba(31, 31, 216, 0.292);
+        }
+        
+    }
+}
+
+
