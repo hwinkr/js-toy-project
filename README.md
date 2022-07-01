@@ -16,7 +16,7 @@ let str = "hellow world"
 
 1-1 종류 
 1. number
--> js 에서 모든 수는 실수로 Type을 부여 하며 정수를 처리하기 위한 특별한 방식이 존재하지 않음
+js 에서 모든 수는 실수로 Type을 부여 하며 정수를 처리하기 위한 특별한 방식이 존재하지 않음
 ```
 console.log(1 === 1.0)
 
@@ -27,7 +27,7 @@ result = 3 / 2; // 1.5 (정수 / 정수 = 실수)
 console.log(result);
 console.log(typeof(result)) //number
 ```
-2. string
+2. string <br/>
 js 의 문자열은 원시타입 , 한번 선언 후 변경이 불가능
 ```
 let name = 'woong'
