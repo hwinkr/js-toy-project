@@ -15,7 +15,7 @@ Data type + variable + literial value
 let str = "hellow world" 
 
 1-1 종류 
-1. number
+1. number <br/>
 js 에서 모든 수는 실수로 Type을 부여 하며 정수를 처리하기 위한 특별한 방식이 존재하지 않음
 ```
 console.log(1 === 1.0)
