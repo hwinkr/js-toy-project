@@ -25,16 +25,14 @@ console.log(result);
 console.log(typeof(result)) //number
 ```
 2. string <br/>
-js 의 문자열은 원시타입 , 한번 선언 후 변경이 불가능
+js 의 문자열은 원시타입 , 한번 선언 후 변경이 불가능 <br/>
+수정 하는 것이 아니라, <br/> 
+새로운 문자열 choi 를 메모리에 추가로 생성 하고 식별자 name은 <br/>
+새로운 값인 choi 를 가르킴 <br/>
 ```
 let name = 'woong'
 name = 'choi'
 ```
-<br/>
-수정 하는 것이 아니라, <br/> 
-새로운 문자열 choi 를 메모리에 추가로 생성 하고 식별자 name은 <br/>
-새로운 값인 choi 를 가르킴 <br/>
-
 3. boolean <br/>
 프로그램의 흐름 제어 / 조건문에서 주로 사용 <br/>
 
