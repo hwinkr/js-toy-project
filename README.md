@@ -30,7 +30,8 @@ js 의 문자열은 원시타입 , 한번 선언 후 변경이 불가능
 let name = 'woong'
 name = 'choi'
 ```
-woong -> choi 수정 하는 것이 아니라, <br/> 
+<br/>
+수정 하는 것이 아니라, <br/> 
 새로운 문자열 choi 를 메모리에 추가로 생성 하고 식별자 name은 <br/>
 새로운 값인 choi 를 가르킴 <br/>
 
