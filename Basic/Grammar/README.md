@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ES6 기준 js 문법 학습
 
 #####[참고1] (https://poiemaweb.com/) <br/>
