@@ -49,7 +49,7 @@ for(index in arr){
     console.log(`${index} : ${arr[index]}`)
 }
 
-// 객체는 원시타입이 아닌 참조타입 이므로 연산이 실제값이 아닌 참조값을 할당
+// 객체는 원시타입이 아닌 참조타입 이므로 연산이 값을 복사해서 전달하는 방식이 아닌 참조값을 할당
 // pass-by-reference
 const person = objExample;
 person.sayHi1();
@@ -104,5 +104,14 @@ console.log(person1.name) // woong
 
 const person2 = new Person("hyun" , "FeMale" , 26)
 console.log(person2.name) // hyun
+
+
+
+
+
+
+
+
+
 
 
