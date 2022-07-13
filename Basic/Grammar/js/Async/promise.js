@@ -24,7 +24,7 @@ const promise = new Promise((resolve , reject) => {
 // catch : reject -> return value or new promise 
 promise
     // Successful case
-    .then((value) => {
+.then((value) => {
     console.log(value)
     })
     // failed case
@@ -36,6 +36,7 @@ promise
     })
 
 // 3. promise chaining
+
 const fetchNumber = new Promise((resolve , reject) =>{
     setTimeout(() => {
         resolve(1)
@@ -43,9 +44,9 @@ const fetchNumber = new Promise((resolve , reject) =>{
 })
 
 fetchNumber
-.then(num => num * 2)
-.then(num => num * 3)
-.then((num) => {
+    .then(num => num * 2)
+    .then(num => num * 3)
+    .then((num) => {
     return new Promise((resolve, reject) => {
         resolve(num -1)
     }, 1000)
@@ -62,14 +63,13 @@ fetchNumber
 
 // 4. Error handling
 
-
 const getHen = () => 
     new Promise ((resolve , reject) => {
         setTimeout(() => resolve('female chicken'), 1000)
     })
 const getEgg = (hen) => 
     new Promise ((resolve , reject) => {
-        setTimeout(() => reject(new Error(`error doing ${hen} => egg!`)), 1000)
+        setTimeout(() => resolve(`${hen} => egg`), 1000)
     })    
 const cook = (egg) =>
     new Promise ((resolve , reject) => {
@@ -85,50 +85,55 @@ getHen()
 .then((meal) => console.log(meal))
 .catch((error) => console.log(error))
 
-// callBack Hell
-
+// callBack Hell Esape
+// in class , no using arrow function
 class UserStorage {
-    loginUser(id , password , onSuccess , onError) {
-        setTimeout(()=>{
-            if(
-                (id === "woong" && password === "1234")||
-                (id === "choiy" && password === "2580" )
-            ){
-                onSuccess(id);
-            }else{
-                onError(new Error('not found this user'))
-            }
-        }, 2000);
+    loginUser(id , password){
+        return new Promise((resolve , reject) => {
+            setTimeout(() => {
+                if(
+                    (id === "woong" && password === "1234")||
+                    (id === "choiy" && password === "2580" )
+                ){
+                    resolve(id)   
+                }else{
+                    reject(new Error ('user not found'))
+                }
+            }, 1000)
+        }) 
     }
-    getRoles(user , onSuccess , onError){
-        setTimeout(() => {
-            if (user === "woong"){
-                onSuccess({name : "woong" , role : "admin"})
-            }else{
-                onError(new Error('no access'))
-            }
-        }, 1000)
-    }
+    getRoles(user){
+        return new Promise((resolve , reject) => {
+            setTimeout(() => {
+                if(user === 'woong')
+                    resolve({name : 'woong' , role : 'admin'})
+                else
+                    reject(new Error('you do not have accession'))
+            })
+        })}
 }
 const newUser = new UserStorage()
 const id = prompt('enter your id')
 const password = prompt('enter your password')
 
-newUser.loginUser(
-    id,
-    password,
-    user => {
-        newUser.getRoles(
-        user , 
-        userWithRole => {
-            alert(`Hello ${userWithRole.name} , you have a ${userWithRole.role} role`)
-        },
-        error => {
-            console.log(error)
-        }
-    )},
-    error => {console.log(error)}
-)
-
-// callBack hell to promise
-
+// 1. using then , catch
+newUser
+.loginUser(id , password)
+.then((user) => newUser.getRoles(user))
+.then((user) => {
+    alert(`Hello ${user.name} your role is ${user.role}`)
+}) 
+.catch((error) => {
+    console.log(error)
+})
+// 2. using async function
+async function checkUser(){
+    try{
+        const userId = await newUser.loginUser(id , password)
+        const thisUser = await newUser.getRoles(userId)
+        console.log(`${thisUser.name} + ${thisUser.role}`)
+    }catch(error){
+        console.log(error)
+    }
+}
+checkUser()
