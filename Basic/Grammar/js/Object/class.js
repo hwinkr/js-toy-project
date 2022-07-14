@@ -64,7 +64,6 @@ class Article{
 }
 const article1 = new Article(1)
 console.log(article1.publisher)
-console.log(Article.publisher)
 Article.printPublisher()
 // inheritance
 class Shape{
@@ -113,5 +112,5 @@ console.log(newRec instanceof Object)
 console.log(newRec.toString())
 console.log(newTri.toString())
 
-// TODO : this  , 바인딩 , 클로저 , 프로미스 
+// TODO : this(바인딩), 클로저 
  

@@ -1,6 +1,13 @@
 // object : key + value
+// type : object , 연속성을 보장하지 않는 dataStructure
+// js object는 원시타입이 아닌 객체타입(참조 타입)
+// 하나의 객체가 여러개의 변수에 담길때 그 모든 변수는 같은 메모리 주소를 참조하게 된다
+// 하나의 변수에서 객체의 값을 변경하면 기존의 객체값도 같이 변경되어 프로그램에 문제를 발생 시킬수 있다.
+// 
 
-//일반적인 생성
+// 1. declaration
+
+// 1-1. directly
 
 let objExample = {
     name : "hyunwoong",
@@ -8,7 +15,7 @@ let objExample = {
     driverLicense : false,
     sayHi1(){
         // console.log(objExample.name) // 객체를 null 로 변경하면 해당 객체가 사라지기 때문에 TyperError
-        console.log(this.name)
+        console.log(this.namee) // undefined
     },
     sayHi2(personName){
         console.log(`안녕 ${personName} 나는 ${this.name} 이야`)
@@ -27,29 +34,18 @@ console.log(objExample.age) // 24
 console.log(objExample["age"]) // key를 문자형으로 사용 가능
 
 objExample.sayHi2("choi")
-
+// add value
 objExample.major = "computer"
 console.log(objExample.major) // computer
-
+// delete value
 delete objExample.age
 console.log("age" in objExample) // false
 
 // 객체의 경우 키 반환 typeof(key) : string
-for(key in objExample){
-    console.log(key)
-    console.log(objExample[key]) // value 출력
-}
+// for(key in objExample){
+//     console.log(`${key} : ${objExample[key]}`)
+// }
 
-// js에서 배열은 Data Type 이 달라도 연속되게 값들을 묶을 수 있다
-// 배별은 순서를 보장 , 객체는 순서를 보장하지 않는 Data type
-const arr = ["woong" , 24 , "busan" , false]
-
-// 배열의 경우 index 반환 typeof(index) : number
-for(index in arr){
-    console.log(`${index} : ${arr[index]}`)
-}
-
-// 객체는 원시타입이 아닌 참조타입 이므로 연산이 값을 복사해서 전달하는 방식이 아닌 참조값을 할당
 // pass-by-reference
 const person = objExample;
 person.sayHi1();
@@ -57,7 +53,8 @@ person.name = "choihyun"
 console.log(person.name , objExample.name) //choihyun choihyun
 console.log(person === objExample) // true
 objExample = null
-person.sayHi1()
+console.log(objExample)
+console.log(person.sayHi1())
 
 // pass-by-value
 // 원시타입의 경우 값이 복사되어 변수에 저장
@@ -71,7 +68,7 @@ a = 10
 console.log(a, b) // 
 console.log(a === b) // false
 
-// Object 생성자 함수 이용하기 : 빈 객체인 Object 를 가져와서 내용 채우기 
+// 1-2 . using generator Object
 
 let explain = new Object();
 
@@ -85,7 +82,7 @@ console.log(typeof(explain))
 console.log(explain.name)
 explain.sayHello()
 
-//객체 생성자 함수 이용하기 : 일반적으로 대문자로 시작
+// 1-3. using generator function
 
 function Person(name , gender, age){
     return {
@@ -104,6 +101,8 @@ console.log(person1.name) // woong
 
 const person2 = new Person("hyun" , "FeMale" , 26)
 console.log(person2.name) // hyun
+
+
 
 
 
