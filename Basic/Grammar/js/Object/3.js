@@ -7,7 +7,6 @@ class Person {
         this.name = name;
         this.age = age;
     }
-
     printHi(name){
         console.log(`hi ${name} form ${this.name}`)
     }

@@ -50,7 +50,7 @@ console.log(user.name) // choi
 // 객체의 가변성을 불변성으로
 // 1. Object.assign
 const boy = {
-    name : "tmoBoy",
+    name : "tomBoy",
     age : 18,
     sayhi(otherName){
         print(`hi ${otherName} my name is ${this.name}`)

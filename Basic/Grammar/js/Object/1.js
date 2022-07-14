@@ -7,7 +7,7 @@ let objExample = {
     age : 24,
     driverLicense : false,
     sayHi1(){
-        console.log(objExample.name) // 객체를 null 로 변경하면 해당 객체가 사라지기 때문에 TyperError
+        // console.log(objExample.name) // 객체를 null 로 변경하면 해당 객체가 사라지기 때문에 TyperError
         console.log(this.name)
     },
     sayHi2(personName){
@@ -104,7 +104,6 @@ console.log(person1.name) // woong
 
 const person2 = new Person("hyun" , "FeMale" , 26)
 console.log(person2.name) // hyun
-
 
 
 
