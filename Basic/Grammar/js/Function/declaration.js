@@ -8,10 +8,10 @@ const mulit = function multilpy(a , b){
     return a * b
 }
 console.log(mulit(2, 4))
+console.log(multilpy(2, 4)) // error , 참조받은 변수를 사용해야함
 
-// console.log(multilpy(2, 4)) // error , 참조받은 변수를 사용해야함
-// 3. 생성자 함수 이용하기
-// new Function (arg1 , arg2 , argN , functionBody)
+//3. 생성자 함수 이용하기
+new Function (arg1 , arg2 , argN , functionBody)
 const squareConstructor = new Function("number", "return number * number")
 console.log(squareConstructor(4))
 

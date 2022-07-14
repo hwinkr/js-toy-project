@@ -57,7 +57,7 @@ function ex1_1(){
 console.log(ex1(ex1_1))
 
 // 3. length : 매개변수의 갯수 출력
-// 4. name : 
+// 4. name : 함수의 이름
 
 // parameters ES6
 // ! Early return 
@@ -96,13 +96,10 @@ function printMessage(){
         console.log(localMessage)
         let childMessage = "child"
     }
-    // console.log(childMessage)
+    // console.log(childMessage) -> error
 }
-
 printMessage()
-// console.log(localMessage) error
-
-// //내일은 콜백함수와 js의 비동기
+// console.log(localMessage) -> error
 
 // callBack function : 함수가 상황에 맞게 실행
 
