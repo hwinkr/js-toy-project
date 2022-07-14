@@ -136,3 +136,12 @@ console.log(richGuys)
 console.clear()
 
 // some , every , reduce
+
+// js에서 배열은 Data Type 이 달라도 연속되게 값들을 묶을 수 있다
+
+const arr = ["woong" , 24 , "busan" , false]
+
+// 배열의 경우 index 반환 typeof(index) : number
+for(index in arr){
+    console.log(`${index} : ${arr[index]}`)
+}
