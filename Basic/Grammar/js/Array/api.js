@@ -90,7 +90,6 @@ const students = [
 }
 // Q8. if there is a student with the score lower than 50
 {
-    console.clear()
     // * some : Determines whether the specified callback function returns true for any element of an array.
     const result = students.some((student) => student.score <= 50)
     console.log(result)
@@ -119,7 +118,6 @@ const students = [
 }
 // Q10. make a string containing all scores
 {
-    console.clear()
     // 함수 API 묶어서 사용 -> 함수형 프로그래밍
     let result = students
     .map((student) => student.score)
