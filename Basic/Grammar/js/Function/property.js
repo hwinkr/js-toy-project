@@ -61,7 +61,8 @@ console.log(ex1(ex1_1))
 
 // parameters ES6
 // ! Early return 
-// 1. default parameters : 함수 사용자가 함수 생성시 정의된 파라미터를 전달하지 않으면 defalut -> undefined
+// 1. default(argument) parameters : 함수 사용자가 함수 생성시 정의된 파라미터를 전달하지 않으면 defalut -> undefined
+
 function printHello(message , from){
     if(from === undefined){
         from = 'unknown'
