@@ -33,8 +33,8 @@ const add10 = makeAdder(10)
 console.log(add10(5)) // 15
 console.log(add3(1)) // 4
 
-let num = 0;
 function addNumber(){
+    let num = 0;
     return function(){
         return num ++;
     }
@@ -56,7 +56,7 @@ const myFunction = outerFunc() // outerFunc() 는 스택에서 제거
 myFunction()
 
 
-//  application of closer
+//  application of closure
 
 // 1. maintain state
 
@@ -65,7 +65,6 @@ const toggleBtn = document.querySelector('.toggle')
 
 const toggle = function(){
     let isShow = false
-
     return function(){
         box.style.display = isShow ? "block" : "none"
         isShow = !isShow
@@ -73,10 +72,10 @@ const toggle = function(){
 }
 toggleBtn.onclick = toggle()
 
-// closer function
+// closure function
 // toggle 함수가 실행 되었을때 결과값으로 반환 하는 함수는 반횐되는 함수가 생성 되었을 당시의 외부 함수 lexical 환경인 변수 isShow를 기억하는 함수다
 
-// 2. decreasrion of using global variable frequency
+// 2. decreasion of frequency of using global variable
 
 const increaseBtn = document.querySelector('.addBtn')
 const count = document.querySelector('.number')
@@ -101,3 +100,34 @@ increaseBtn.addEventListener('click' , ()=>{
     count.innerHTML = increaser()
 })
 
+// 3. using generator function
+function Counter () {
+    let count = 0;
+
+    this.increase = function(){
+            return ++count
+    };
+
+    this.decrease = function(){
+            return --count
+    }
+    
+}
+const counterObj = new Counter()
+console.log(counterObj.increase())
+console.log(counterObj.decrease())
+
+// 4. functional programming
+
+const arr = []
+for(let i = 0; i < 5; i++){
+    arr[i] = function(){
+        return i;
+    }
+}
+for(let j = 0; j < arr.length; j++)
+    console.log(arr[j]())
+
+const arr2 = new Array(5).fill();
+arr.forEach((value, index ,array) => array[index] = () => index)
+arr.forEach((f) => console.log(f()))
