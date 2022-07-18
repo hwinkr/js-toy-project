@@ -1,0 +1,4 @@
+.htmlBox{
+    display: flex;
+    flex-direction: row;
+}
