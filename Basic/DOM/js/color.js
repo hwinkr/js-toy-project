@@ -47,3 +47,53 @@ color.firstElementChild.style.color = "red"
 const blue = document.querySelector(".blue")
 console.log(blue.previousElementSibling)
 console.log(blue.nextElementSibling)
+
+// 노드 생성 , 추가 , 복제
+
+const orange = document.querySelector('.orange')
+console.log(orange.nodeType)
+console.log(orange.nodeValue) 
+console.log(orange.nodeName)
+
+const orangeChild = orange.firstChild
+console.log(orangeChild.nodeType) // 3
+console.log(orangeChild.nodeValue) // orange
+console.log(orangeChild.nodeName) // #text
+
+const ul = document.querySelector('.color')
+console.log(ul.nodeName)
+console.log(ul.nodeValue)
+console.log(ul.nodeType)
+// html 요소인 li 생성
+const newLi = document.createElement('li')
+console.log(newLi)
+// li 내부를 HTML로 채우고
+newLi.innerHTML = "hi"
+console.log(newLi)
+// ul의 자식요소로 추가
+ul.appendChild(newLi)
+
+const newLi2 = document.createElement('li');
+// element가 아닌 TextNode를 생성
+const newText = document.createTextNode('pink')
+// li에 자식요소로 추가
+newLi2.appendChild(newText)
+// ul에 자식요소로 추가
+// appendChild : 항상 마지막 자식 요소로 추가
+ul.appendChild(newLi2)
+
+const newLi3 = document.createElement('li')
+const li3Text = document.createTextNode('tomato')
+newLi3.appendChild(li3Text)
+ul.insertBefore(newLi3, red)
+ul.appendChild(red)
+ul.insertBefore(red , newLi3)
+// 노드 복제
+const newTomato = newLi3.cloneNode(true)
+console.log(newLi3.innerText)
+console.log(newTomato.innerText)
+ul.appendChild(newTomato)
+// 삭제
+ul.removeChild(red)
+ul.removeChild(ul.firstElementChild)
+ul.removeChild(ul.lastElementChild)
