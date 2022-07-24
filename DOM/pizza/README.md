@@ -1,6 +1,6 @@
 # YOUTUBE 김버그 드롭다운 실습
 [링크](https://www.youtube.com/watch?v=X0bf0hfE3qA)
-**
+*이벤트 *
 ```
 function optionHandler(event){
     console.log(event.target)
