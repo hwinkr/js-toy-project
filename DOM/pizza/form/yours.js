@@ -1,8 +1,12 @@
-# YOUTUBE 김버그 드롭다운 실습
-[링크](https://www.youtube.com/watch?v=X0bf0hfE3qA)<br />
-***
-### 이벤트 위임
-```
+const toggleBtn = document.querySelector(".dropdown-toggle")
+const menu = document.querySelector('.dropdown-menu')
+const locationList = document.querySelectorAll('.dropdown-item')
+const nextBtn = document.querySelector('.next-button')
+
+toggleBtn.addEventListener('click' , () => {
+    menu.classList.toggle('show')
+})
+
 function optionHandler(event){
     console.log(event.target)
     console.log(event.currentTarget)
@@ -14,4 +18,4 @@ function optionHandler(event){
 }
 
 menu.addEventListener('click' , optionHandler)
-```
+
