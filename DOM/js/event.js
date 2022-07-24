@@ -60,7 +60,6 @@ console.log(colors)
 
 const colorHandler = function(event){
     let target = event.target
-    console.log(target)
     if(target.tagName === "A")
         target = target.parentElement
     else if(target.tagName === "UL"){
@@ -83,3 +82,52 @@ colorList.addEventListener('click' , colorHandler)
 const pink = document.querySelector('.pink')
 console.log(pink.childNodes)
 console
+
+//js event flow : 동일한 이벤트의 핸들러가 존재하는 경우 자식요소에서 이벤트가 발생하더라도 부모까지 이벤트 전달
+
+// target : 이벤트의 시발점
+// currentTarget : 이벤트 핸들러의 주인
+const item = document.querySelector('.item1');
+
+item.addEventListener('click' , (e) => {
+    console.log('3. list item')
+    console.log(e.target)
+    console.log(e.currentTarget)
+})
+
+
+const newlist = document.querySelector('.newlist');
+
+list.addEventListener('click' , (e) => {
+    console.log('2. unordered list')
+    console.log(e.target)
+    console.log(e.currentTarget)
+})
+
+const newbox = document.querySelector('.newbox');
+
+box.addEventListener('click' , (e) => {
+    console.log('1. div')
+    console.log(e.target)
+    console.log(e.currentTarget)
+})
+
+// 똑같은 이벤트가 동시에 발생 한다면 어떤 이벤트 부터 실행 시켜야 하는가?
+// flow : capture(propagate up) -> target -> bubble(propagate down)
+// currentTarget != event.target 인 경우, capture or bubble 둘중 하나에서만 이벤트 발생 -> default : bubble 
+// event control : e.stopPropogation() 다음 이벤트 발생을 막음
+
+// eventHandler 를 사용하면 항상 js에서 그 이벤트에 해당하는 객체를 전달해줌
+// target , currentTarget , preventDefault , stopPropagation()
+// preventDefault : 상황에 따라서 브라우저가 기본으로 정해놓은 로직을 막음
+
+const form = document.querySelector('.form')
+
+form.addEventListener('submit' , (e) =>{
+    e.preventDefault()
+})
+
+const input = document.querySelector('.emailInput')
+input.addEventListener('input' , (e) =>{
+    console.log(e.target.value)
+})
