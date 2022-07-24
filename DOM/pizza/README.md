@@ -14,4 +14,8 @@ function optionHandler(event){
 }
 
 menu.addEventListener('click' , optionHandler)
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 1ed70e922c38026c387d2ab69587a5522f8c0bf7
