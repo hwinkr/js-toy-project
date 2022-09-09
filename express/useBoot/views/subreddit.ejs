@@ -1,0 +1,17 @@
+<%- include('partial/head') %>
+<%- include('partial/nav.ejs') %>
+
+<h1> This is <%= subreddit %> Page! </h1>
+<h2> <%= description %> </h2>
+<p> Total Subscribers : <%= subscribers %> </p>
+<hr>
+<% for(let post of posts){ %>
+<article>
+    <h3> <%= post.title %> - <%= post.author %> </h3>
+    <% if (post.img) { %>
+    <img src="<%= post.img %> " alt="">
+    <% } %>
+</article>
+<% } %>
+
+<%- include('partial/footer.ejs') %>
