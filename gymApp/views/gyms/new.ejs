@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Create New Gym</title>
+</head>
+<body>
+    <h1> Register New Gym!! </h1>
+    <form action="/gymlist" method="POST">
+        <section>
+            <label for="name">
+                Gym Name
+            </label>
+            <input type="text" id="name" name="title">
+        </section>
+        <section>
+            <label for="price">
+                Gym Price
+            </label>
+            <input type="text" id="price" name="price">
+        </section>
+        <section>
+            <label for="location">
+                Gym Location
+            </label>
+            <input type="text" id="location" name="location">
+        </section>
+        <button type="submit">Create Gym</button>
+    </form>
+</body>
+</html>

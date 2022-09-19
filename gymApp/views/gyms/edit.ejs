@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= foundGym.title %> Edit Page</title>
+</head>
+<body>
+    <h1><%= foundGym.title %> Edit Page!!!</h1>
+    <form action="/gymlist/<%= foundGym._id %>?_method=PUT" method="POST">
+        <section>
+            <label for="name">
+                Gym Name
+            </label>
+            <input type="text" id="name" name="title" value=<%= foundGym.title %>>
+        </section>
+        <section>
+            <label for="price">
+                Gym Price
+            </label>
+            <input type="text" id="price" name="price" value=<%= foundGym.price %>>
+        </section>
+        <section>
+            <label for="location">
+                Gym Location
+            </label>
+            <input type="text" id="location" name="location" value=<%= foundGym.location %> >
+        </section>
+        <button type="submit">edit Gym</button>
+    </form>
+    <br>
+
+    <a href="/gymlist/<%= foundGym._id %>">
+        go back
+    </a>
+</body>
+</html>

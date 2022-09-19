@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= foundGym.title %> </title>
+</head>
+<body>
+    <h1>Detail Page!</h1>
+    <ul>
+        <li> Name : <%= foundGym.title %> </li>
+        <li> Price : <%= foundGym.price %> </li>
+        <li> Location : <%= foundGym.location %> </li>
+    </ul>
+    <a href="/gymlist/<%= foundGym._id %>/edit">
+        <button>go edit</button>
+    </a>
+
+    <form action="/gymlist/<%= foundGym._id %>?_method=DELETE " method="POST">
+        <button type="submit">go delete</button>
+    </form>
+    
+    <a href="/gymlist">
+        <button>go list</button>
+    </a>
+
+</body>
+</html>
