@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>user Comments</h1>
+
         <ul>
             <% comments.forEach((c) => { %>
             <li><%= c.username %> - <%= c.comment %> </li>
@@ -15,6 +16,7 @@
             <% })%>
 
         </ul>
+        
         <a href="/comments/new">go comment</a>
     </body>
 </html>
