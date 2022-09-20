@@ -120,8 +120,6 @@ app.delete('/comments/:id', (req, res) => {
 //     res.send('<h1>this is not in server address!,, please check sever address...')
 // })
 
-// what is slug?
-
 // method 를 구분해서 작성하면 같은 server url 주소여도 다른 기능을 수행함 
 app.get('/tacos', (req, res) => {
     res.send("GET/ tacos response")
