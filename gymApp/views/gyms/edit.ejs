@@ -1,38 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= foundGym.title %> Edit Page</title>
-</head>
-<body>
-    <h1><%= foundGym.title %> Edit Page!!!</h1>
-    <form action="/gymlist/<%= foundGym._id %>?_method=PUT" method="POST">
-        <section>
-            <label for="name">
-                Gym Name
-            </label>
-            <input type="text" id="name" name="title" value=<%= foundGym.title %>>
-        </section>
-        <section>
-            <label for="price">
-                Gym Price
-            </label>
-            <input type="text" id="price" name="price" value=<%= foundGym.price %>>
-        </section>
-        <section>
-            <label for="location">
-                Gym Location
-            </label>
-            <input type="text" id="location" name="location" value=<%= foundGym.location %> >
-        </section>
-        <button type="submit">edit Gym</button>
-    </form>
+<% layout('layouts/boilerplate') %>   
+<div class="row">
+    <div class="text-center"> Edit <%= foundGym.title %> </div>
+    <div class="col-6 offset-3">
+        <form action="/gymlist/<%= foundGym._id %>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">
+                    Gym Name
+                </label>
+                <input class = "form-control" type="text" id="name" name="title" value=<%= foundGym.title %> >
+            </div>
+                
+            <div class="mb-3">
+                <label class="form-label" for="price">
+                    Gym Price
+                </label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input class = "form-control" type="text" id="price" name="price" value=<%= foundGym.price %>>
+                </div>
+            </div>
+
+            <div class = "mb-3">
+                <label class="form-label" for="image">
+                    Image Url
+                </label>
+                <input class="form-control" type="text" id="image" name="image" value = <%= foundGym.image %> >
+            </div>
+                
+            <div class="mb-3">
+                <label class="form-label" for="location">
+                    Gym Location
+                </label>
+                <input class = "form-control" type="text" id="location" name="location" value=<%= foundGym.location %> >
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Gym Description</label>
+                <textarea class="form-control" type="text" id="description" name="description">
+                    <%= foundGym.description %> 
+                </textarea>
+            </div>
+            
+            <div class="mt-3">
+                <button class="btn btn-success" type="submit">Edit Gym</button>
+            </div>
+        </form>
+        <a href="/gymlist/<%= foundGym._id %>">
+            go back
+        </a>
+    </div>
+</div>      
+   
+
     <br>
 
-    <a href="/gymlist/<%= foundGym._id %>">
-        go back
-    </a>
-</body>
-</html>
+    
