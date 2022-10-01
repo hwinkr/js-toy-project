@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const ejsMate = require('ejs-mate')
 const path = require('path')
 const app = express()
 
@@ -20,6 +21,9 @@ app.listen(8080, () => {
     console.log('server open!')
 })
 
+// ejs 파일을 실행하거나, 파싱할 때 쓰이는 엔진은 여러가지가 있음
+// 디폴트 엔진말고 ejs-mate로 실행하기
+app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(methodOverride('_method'))
